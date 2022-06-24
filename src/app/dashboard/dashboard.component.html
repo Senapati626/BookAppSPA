@@ -1,0 +1,13 @@
+<p>{{message.id}}</p>
+<div *ngFor="let recommend of recommended" class="book-card">
+    <div>
+      <img class="book-img" src='{{"https://covers.openlibrary.org/b/olid/"+recommend.cover+"-L.jpg"}}' alt={{recommend.title}}/>
+    </div>
+    <div class="book-card-right">
+      <p class="book-title">{{recommend.title}}<span>({{recommend.publishYear}})</span></p>
+      <p class="book-author">{{recommend.author}}</p>
+      <p>{{recommend.description}}...</p>
+      <p class="book-pages">{{recommend.pages}} Pages</p>
+      <a href='{{"https://openlibrary.org/books/"+recommend.cover}}' target="_blank">Check it on Open Library</a>
+    </div>
+  </div>

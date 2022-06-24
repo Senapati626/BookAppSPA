@@ -1,0 +1,15 @@
+<p>register-user works!</p>
+<form [formGroup]="registerForm">
+    <!-- <label>UserID</label><br>
+    <input type="number" formController="id"/>
+    <br> -->
+    <label>Enter Username</label>
+    <br>
+    <input type="text" formControlName="userName"/>
+    <br>
+    <label>Enter Password</label>
+    <br>
+    <input type="password" formControlName="userPassword"/>
+    <br><br>
+    <button (click)="onSubmit()">Register</button>
+</form>

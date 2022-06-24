@@ -1,0 +1,8 @@
+<p>{{message.id}}</p>
+<form [formGroup]="loginForm">
+    <input type="text" formControlName="username">
+    <br>
+    <input type="text" formControlName="password">
+    <br>
+    <button (click)="login()">Login</button>
+</form>

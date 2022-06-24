@@ -1,0 +1,29 @@
+.book-card{
+    display: flex;
+    padding: 1em;
+    background-color: rgb(255, 255, 240);
+    flex-wrap: wrap;
+    width: fit-content;
+    min-width: 450px;
+    max-width: 850px;
+}
+.book-card-right{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    justify-content: center;
+}
+.book-card-right p{
+    max-width: 500px;
+}
+.book-img{
+    height: 250px;
+}
+.book-title{
+    font-size: 28px;
+    font-weight: 600;
+}
+.book-author{
+    font-size: 22px;
+    font-style: italic;
+}

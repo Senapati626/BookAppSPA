@@ -1,0 +1,25 @@
+<div class="container">
+<div class="navbar">
+    <div class="nav-left">
+        <p>bookapp</p>
+    </div>
+    <div class="nav-right"> 
+        <a routerLink="/register">register</a>
+        <a routerLink="/login">login</a>
+    </div>
+</div>
+<div class="home-hero">
+    <div class="home-hero-left">
+        <div>
+            <p class="home-hero-header"><span>BookApp</span> is a one-stop solution for satisfying all your literary cravings</p>
+        </div>
+        <div>
+            <p class="home-hero-desc">Find your favourite titles and read them online without the hassle of going out.</p>
+        </div>
+        <button class="home-hero-btn" [routerLink]="'register'">Register</button>
+    </div>
+    <div class="home-hero-right">
+        <img src="assets/hero.png" alt="BookApp"/>
+    </div>
+</div>
+</div>

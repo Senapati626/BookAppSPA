@@ -1,0 +1,36 @@
+<div class="home-link">
+    <a routerLink="/dashboard">bookapp</a>
+</div>
+<div class="container">
+    <div class="search-container">
+        <h1 class="search-header">Search for your favourite titles</h1>
+        <form action="#" (submit)="onSubmit()" method="get">
+            <div class="search-section">
+                <input name="search" type="text" placeholder="E.g- The Prisoner of Azkaban" [(ngModel)]="searchTerm"/>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="card-container" *ngFor="let result of results">
+        <div class="card">
+            <div class="card-left">
+                <img src='{{"https://covers.openlibrary.org/b/olid/"+result.cover_edition_key+"-L.jpg"}}' alt="book image"/>
+            </div>
+            <div class="card-right">
+                <div>
+                    <p class="card-title">{{result.title}} ({{result.first_publish_year}})</p>
+                </div>
+                <div>
+                    <p class="card-author">{{result.author_name}}</p>
+                </div>
+                <div class="card-mid">
+                    <p><strong>Edition Count- </strong> {{result.edition_count}}</p>
+                    <p><strong>Pages-</strong> {{result.number_of_pages_median}}</p>
+                </div>
+                <div class="card-link">
+                    <a href='{{"https://openlibrary.org/"+result.key}}' target="_blank">View on Open Library</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

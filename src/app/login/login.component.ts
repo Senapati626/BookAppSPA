@@ -3,15 +3,12 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../service/users.service';
 
-
 @Component({
-  selector: 'app-login-user',
-  templateUrl: './login-user.component.html',
-  styleUrls: ['./login-user.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-
-
-export class LoginUserComponent implements OnInit {
+export class LoginComponent implements OnInit {
   public loginForm!: FormGroup
   message: any
   constructor(
@@ -25,19 +22,18 @@ export class LoginUserComponent implements OnInit {
       username: [''],
       password: ['']
     });
-    this.userService.currentMessage.subscribe(message=>this.message = message)
+    
   }
   login(){
     this.userService.getUsers()
     .subscribe(res=>{
       const user = res.find((a:any)=>{
-        return a.userName===this.loginForm.value.username && a.userPassword===this.loginForm.value.password;
+        return a.userName===this.loginForm.value.username && a.password===this.loginForm.value.password;
       });
       if(user){
         alert("Login success");
         this.loginForm.reset();
         sessionStorage.setItem('loggedIn','yes');
-        //this.userService.currentMessage.subscribe(user=>this.message = user)
         this.router.navigate(['dashboard'])
       }
       else{
@@ -46,5 +42,4 @@ export class LoginUserComponent implements OnInit {
       }
     })
   }
-
 }

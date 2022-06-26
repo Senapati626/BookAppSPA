@@ -1,0 +1,18 @@
+<div class="form-container">
+<form [formGroup]="loginForm" class="form">
+    <p>Login to BookApp</p>
+    <div class="form-section">
+        <label>Enter username</label>
+        <input type="text" formControlName="username">
+    </div>
+    <div class="form-section">
+        <label>Enter Password</label>
+        <input type="password" formControlName="password">
+    </div>
+    <button (click)="login()" class="form-submit" style="color:#29274c;background-color: #e98db8;">Login</button>
+    <a routerLink="/register">New User? Click here to register.</a>
+</form>
+</div>
+<div class="home-link">
+    <a routerLink="/">bookapp</a>
+</div>

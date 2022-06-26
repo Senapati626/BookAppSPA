@@ -1,0 +1,37 @@
+
+<div class="home-link">
+    <a routerLink="/dashboard">bookapp</a>
+</div>
+<div class="container">
+    <div class="search-container">
+        <h1 class="search-header">Search for your favourite authors</h1>
+        <form action="#" (submit)="onSearch()" method="get">
+            <div class="search-section">
+                <input name="search" type="text" placeholder="E.g- Mark Twain" [(ngModel)]="author"/>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="card-container" *ngFor="let result of results">
+        <div class="card">
+            <div class="card-left">
+                <img src='{{"https://covers.openlibrary.org/a/olid/"+result.key+"-L.jpg"}}' alt="author image"/>
+            </div>
+            <div class="card-right">
+                <div>
+                    <p class="card-title">{{result.name}}</p>
+                </div>
+                <div>
+                    <p class="card-author">{{result.birth_date}} - {{result.death_date}}</p>
+                </div>
+                <div class="card-mid">
+                    <p><strong>Famous for-</strong> {{result.top_work}}</p>
+                    <p><strong>Total Works-</strong> {{result.work_count}}</p>
+                </div>
+                <div class="card-link">
+                    <a href='{{"https://openlibrary.org/authors/"+result.key}}' target="_blank">View on Open Library</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

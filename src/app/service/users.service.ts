@@ -8,9 +8,7 @@ import { BehaviorSubject } from "rxjs";
 })
 
 export class UserService{
-     baseUrl: string = 'http://localhost:3000/users';
-     private messageSource = new BehaviorSubject<any>({"id":0});
-     currentMessage = this.messageSource.asObservable();
+     baseUrl: string = 'http://localhost:8087/users';
      constructor(private http: HttpClient){
 
      }
@@ -22,8 +20,5 @@ export class UserService{
      }
      addUsers(user: User){
         return this.http.post(this.baseUrl,user);
-     }
-     changeMessage(message: number){
-      this.messageSource.next(message)
      }
 }

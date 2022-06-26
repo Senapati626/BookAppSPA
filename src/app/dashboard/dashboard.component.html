@@ -1,13 +1,25 @@
-<p>{{message.id}}</p>
-<div *ngFor="let recommend of recommended" class="book-card">
-    <div>
-      <img class="book-img" src='{{"https://covers.openlibrary.org/b/olid/"+recommend.cover+"-L.jpg"}}' alt={{recommend.title}}/>
+<div class="container">
+    <div class="navbar">
+        <div class="nav-left">
+            <p>bookapp</p>
+        </div>
+        <div class="nav-right">
+            <a href="">profile</a>
+            <a routerLink="/search">search</a>
+            <a href="" (click)="signOut()">logout</a>
+        </div>
     </div>
-    <div class="book-card-right">
-      <p class="book-title">{{recommend.title}}<span>({{recommend.publishYear}})</span></p>
-      <p class="book-author">{{recommend.author}}</p>
-      <p>{{recommend.description}}...</p>
-      <p class="book-pages">{{recommend.pages}} Pages</p>
-      <a href='{{"https://openlibrary.org/books/"+recommend.cover}}' target="_blank">Check it on Open Library</a>
+    <div class="dashboard-hero">
+        <div class="dashboard-header">
+            <h1>Welcome Back User</h1>
+        </div>
+        <div class="dashboard-img">
+            <img src="assets/dashboard.png" alt="">
+        </div>
     </div>
-  </div>
+    <div class="dashboard-btn-wrapper">
+        <button [routerLink]="['/favourites']">Favourites</button>
+        <button [routerLink]="['/authors']">Authors</button>
+        <button [routerLink]="['/recommended']">Recommendations</button>
+    </div>
+</div>

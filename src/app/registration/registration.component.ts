@@ -4,14 +4,12 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../service/users.service';
 
-
-
 @Component({
-  selector: 'app-register-user',
-  templateUrl: './register-user.component.html',
-  styleUrls: ['./register-user.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class RegisterUserComponent implements OnInit {
+export class RegistrationComponent implements OnInit {
   registerForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -22,7 +20,7 @@ export class RegisterUserComponent implements OnInit {
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
       userName: [''],
-      userPassword: ['']
+      password: ['']
     });
   }
 
@@ -31,8 +29,8 @@ export class RegisterUserComponent implements OnInit {
     this.userService.addUsers(this.registerForm.value)
     .subscribe((data)=>{
       console.log('Data Saved');
+      this.registerForm.reset();
       this.router.navigate(['dashboard']);
     })
   }
-
 }

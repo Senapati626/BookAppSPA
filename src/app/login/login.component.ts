@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
         alert("Login success");
         this.loginForm.reset();
         sessionStorage.setItem('loggedIn','yes');
+        sessionStorage.setItem('userId',user.userId.toString());
         this.router.navigate(['dashboard'])
       }
       else{
